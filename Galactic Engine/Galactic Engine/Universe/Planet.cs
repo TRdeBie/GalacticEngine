@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Galactic_Engine.Universe
 {
-    class Planet : CelestialObject
+    class Planet
     {
         GraphicsDevice device;
         Sphere sphere;
@@ -24,7 +24,7 @@ namespace Galactic_Engine.Universe
 
         private void SetUp()
         {
-            sphere = new Sphere(1.0f, device, Color.White, 90);
+            sphere = new Sphere(0.01f, device, Color.White, 90);
         }
 
         public void Update()
@@ -32,7 +32,7 @@ namespace Galactic_Engine.Universe
 
         public void Draw(Camera camera, Matrix world)
         {
-            sphere.Draw(camera, new Vector3(0, 0, 0), world);
+            sphere.Draw(camera, new Vector3(0, 0, 2), world);
         }
     }
 }

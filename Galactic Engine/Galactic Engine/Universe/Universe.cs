@@ -13,6 +13,9 @@ namespace Galactic_Engine.Universe
 {
     class Universe
     {
+        //Made by Tim de Bie
+        //Couple of notes
+        //Measurements are in lightSeconds
         List<StarSystem> universe;
         GraphicsDevice device;
         Camera camera;
@@ -28,18 +31,23 @@ namespace Galactic_Engine.Universe
         {
             //Essential stuff, setting up a world matrix
             world = Matrix.CreateScale(1.0f);
+
             //Set up the universe, all star systems
             universe = new List<StarSystem>();
             universe.Add(new StarSystem(device));
+
             //Setup a camera
-            Vector3 eye = new Vector3(2, 0, 0);
+            Vector3 eye = new Vector3(4, 0, 0);
             Vector3 focus = new Vector3(0, 0, 0);
             Vector3 up = new Vector3(0, 1, 0);
             camera = new Camera(eye, focus, up);
         }
 
         public void Update(float timestep)
-        { }
+        {
+            KeyboardState keyboardState = Keyboard.GetState();
+
+        }
 
         public void Draw()
         {
