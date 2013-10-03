@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galactic Engine", "Galactic Engine\Galactic Engine\Galactic Engine.csproj", "{CA1C8324-3E96-46E6-A026-E2933F352622}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Galactic EngineContent", "Galactic Engine\Galactic EngineContent\Galactic EngineContent.contentproj", "{F29EEC7A-7BCD-457C-9BB5-CE9FAAA7BAC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA1C8324-3E96-46E6-A026-E2933F352622}.Debug|x86.ActiveCfg = Debug|x86
+		{CA1C8324-3E96-46E6-A026-E2933F352622}.Debug|x86.Build.0 = Debug|x86
+		{CA1C8324-3E96-46E6-A026-E2933F352622}.Release|x86.ActiveCfg = Release|x86
+		{CA1C8324-3E96-46E6-A026-E2933F352622}.Release|x86.Build.0 = Release|x86
+		{F29EEC7A-7BCD-457C-9BB5-CE9FAAA7BAC3}.Debug|x86.ActiveCfg = Debug|x86
+		{F29EEC7A-7BCD-457C-9BB5-CE9FAAA7BAC3}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

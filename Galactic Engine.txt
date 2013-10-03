@@ -1,0 +1,25 @@
+Mix between space engine ( en.spaceengine.org/ ) and Spore
+Large amounts of procedurally generated star systems, each with their own planets and other objects, each unique
+Able to zoom in and out between planet-scaled objects and the whole galaxy
+In galaxy view, see star clusters, nebulas, etc.
+Zoom in more to see individual stars
+Zoom in even more to see the star systems
+
+Building it up:
+Start with a planet, make it so that it's only visible when sufficiently close
+Find a way to give it properties based on random numbers
+Then build a star
+Use the star as a light source for a semi-realistic shader for planets (good exercise for Graphics!)
+Make it so that the star will be visible for further than the planet, but eventually will become too faint to see
+Then build smaller objects, such as moons, comets, asteroids
+Find a way to generate a solar system from random numbers
+Create a second solar system
+Create a small cluster of systems, which will be visible as one object for further than the individual stars
+Create other celestial objects, such as gas clouds, neutron stars and black holes
+Find a way to generate a complete galaxy out of random numbers
+
+Profit!
+Further ideas: RTS (space based strategy game), RPG-like game
+
+How? C# + Coffee + Willpower + Google! (And time, lots and lots of time)
+Good idea: Plan, plan and plan some more
