@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -76,7 +77,7 @@ namespace Galactic_Engine
         protected override void Draw(GameTime gameTime)
         {
             // Clear the screen in a predetermined color and clear the depth buffer
-            device.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.DeepSkyBlue, 1.0f, 0);
+            device.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Microsoft.Xna.Framework.Color.DeepSkyBlue, 1.0f, 0);
 
             //Draw the whole friggin universe
             universe.Draw();

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -15,7 +16,9 @@ namespace Galactic_Engine.Universe
     {
         //Made by Tim de Bie
         //Couple of notes
-        //Measurements are in lightSeconds
+        //Measurements are in lightSeconds (this is great and all when inside a solar system, but outside lightyears are needed)
+        //1 lightyears = 3.145 * 10^7 lightseconds so yeah
+        //Todo: create a decent camera movement system
         List<StarSystem> universe;
         GraphicsDevice device;
         Camera camera;
@@ -47,6 +50,7 @@ namespace Galactic_Engine.Universe
         {
             KeyboardState keyboardState = Keyboard.GetState();
 
+            camera.Update(timestep, keyboardState);
         }
 
         public void Draw()

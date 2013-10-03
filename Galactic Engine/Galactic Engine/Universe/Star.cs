@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -15,6 +16,9 @@ namespace Galactic_Engine.Universe
     {
         GraphicsDevice device;
         Sphere sphere;
+        float diameter;
+        //Use a local location in light seconds, relative to center of parent star system
+        PointF location;
 
         public Star(GraphicsDevice d) 
         {
@@ -24,7 +28,9 @@ namespace Galactic_Engine.Universe
 
         private void SetUp()
         {
-            sphere = new Sphere(1.0f, device, Color.Yellow, 90);
+            //Sun diameter is 4.64 light seconds
+            diameter = 4.64f;
+            sphere = new Sphere(diameter / 2, device, Microsoft.Xna.Framework.Color.Yellow, 90);
         }
 
         public void Update()

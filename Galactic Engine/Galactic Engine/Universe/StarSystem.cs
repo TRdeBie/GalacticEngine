@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -16,6 +17,8 @@ namespace Galactic_Engine.Universe
         List<Star> stars;
         List<Planet> planets;
         GraphicsDevice device;
+        //Need local location and galactic location. First in lightseconds, second in lightyears
+        PointF locationGalactic;
 
         public StarSystem(GraphicsDevice d)
         {
