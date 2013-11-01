@@ -21,6 +21,8 @@ namespace Galactic_Engine
         FrameRateCounter frameRateCounter;
         Galactic_Engine.Universe.Universe universe;
 
+        int[] screenResolution;
+
         public Game()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -37,8 +39,11 @@ namespace Galactic_Engine
             // Copy over the device's rasterizer state to change the current fillMode
             device.RasterizerState = new RasterizerState() { CullMode = CullMode.None };
             // Set up the window
-            graphics.PreferredBackBufferWidth = 1200;
-            graphics.PreferredBackBufferHeight = 860;
+            screenResolution = new int[2];
+            screenResolution[0] = 1280;
+            screenResolution[1] = 860;
+            graphics.PreferredBackBufferWidth = screenResolution[0];
+            graphics.PreferredBackBufferHeight = screenResolution[1];
             graphics.IsFullScreen = false;
             // Let the renderer draw and update as often as possible
             graphics.SynchronizeWithVerticalRetrace = false;
@@ -49,7 +54,7 @@ namespace Galactic_Engine
             IsMouseVisible = true;
 
             //Actual game stuff here
-            universe = new Universe.Universe(device);
+            universe = new Universe.Universe(device, screenResolution);
 
             base.Initialize();
         }

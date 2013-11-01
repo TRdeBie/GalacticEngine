@@ -30,7 +30,7 @@ namespace Galactic_Engine.Universe
         private void SetUp()
         {
             //Earth diameter is 0.042479 light seconds
-            diameter = 0.042479f;
+            diameter = 1.042479f;
             //Distance from Earth to sun is 499.2 light seconds
             distanceToStar = 499.2f;
             sphere = new Sphere(diameter / 2, device, Microsoft.Xna.Framework.Color.White, 90);
@@ -41,7 +41,7 @@ namespace Galactic_Engine.Universe
 
         public void Draw(Camera camera, Matrix world)
         {
-            sphere.Draw(camera, new Vector3(0, 0, distanceToStar), world);
+            sphere.Draw(camera, new Vector3(distanceToStar, 0, 0), world);
         }
     }
 }

@@ -23,10 +23,12 @@ namespace Galactic_Engine.Universe
         GraphicsDevice device;
         Camera camera;
         Matrix world;
+        int[] screenresolution;
 
-        public Universe(GraphicsDevice d)
+        public Universe(GraphicsDevice d, int[] sr)
         {
             device = d;
+            screenresolution = sr;
             SetUp();
         }
 
@@ -40,21 +42,22 @@ namespace Galactic_Engine.Universe
             universe.Add(new StarSystem(device));
 
             //Setup a camera
-            Vector3 eye = new Vector3(4, 0, 0);
-            Vector3 focus = new Vector3(0, 0, 0);
+            Vector3 eye = new Vector3(500, 1, 0);
+            Vector3 focus = new Vector3(0, 0, -1);
             Vector3 up = new Vector3(0, 1, 0);
-            camera = new Camera(eye, focus, up);
+            camera = new Camera(eye, focus, up, device);
         }
 
         public void Update(float timestep)
         {
             KeyboardState keyboardState = Keyboard.GetState();
-
-            camera.Update(timestep, keyboardState);
+            MouseState mouseState = Mouse.GetState();
+            camera.Update(timestep, keyboardState, mouseState, screenresolution);
         }
 
         public void Draw()
         {
+            camera.Draw(world);
             foreach (StarSystem s in universe)
             {
                 s.Draw(camera, world);
