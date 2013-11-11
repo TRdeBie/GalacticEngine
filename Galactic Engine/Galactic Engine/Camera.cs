@@ -29,6 +29,7 @@ namespace Galactic_Engine
 
         private float aspectRatio = 4.0f / 3.0f;
         private float farplaneDistance; //Added to allow for changing of the far plane distance
+        private bool rightMousePressed;
 
         private float yaw, pitch; //Allow calculation of viewing direction
         private Vector3 right, down; //Relative to viewing direction, to move perpendicular to focus
@@ -48,6 +49,7 @@ namespace Galactic_Engine
             UpdateViewMatrix();
 
             sphereFocus = new Sphere(0.1f, graphics, Microsoft.Xna.Framework.Color.Gray, 5);
+            rightMousePressed = false;
         }
 
         private void FindRightDown()
@@ -71,7 +73,11 @@ namespace Galactic_Engine
         {
             //Camera movements here
             Keys[] keys = k.GetPressedKeys();
-            //Change the focus with the mouse by pressing left control
+            //Change the focus with the mouse by pressing right mouse button
+            if (m.RightButton == ButtonState.Pressed && !rightMousePressed){
+                Mouse.SetPosition(screenresolution[0] / 2, screenresolution[1] / 2);
+                rightMousePressed = true;
+            }
             if (m.RightButton == ButtonState.Pressed && m.X >= 0 && m.X <= screenresolution[0] && m.Y >= 0 && m.Y <= screenresolution[1])
                 ChangeFocus(timestep, m, screenresolution);
             //Check all keys and move relative to the focus
